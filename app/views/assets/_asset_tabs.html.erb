@@ -1,16 +1,15 @@
-
 <div class="more tabs" id="tabs_for_track_<%= object_id %>" style="display:none;">
     
     <ul>
-      <li><%= link_to 'comment', "#comment_track_#{asset.unique_id}" %> </li>
-      <li><%= link_to 'about', "#details_track_#{asset.unique_id}" %> </li>
-      <li><%= link_to 'more', "#share_track_#{asset.unique_id}" %> </li>
+      <li><%= link_to 'comment', "#comment_track_#{id}" %> </li>
+      <li><%= link_to 'about', "#details_track_#{id}" %> </li>
+      <li><%= link_to 'more', "#share_track_#{id}" %> </li>
     </ul>
     <% if logged_in? %>
         <%= favorite_toggle(asset) %>
     <% end %>
     
-  	<div id="details_track_<%= asset.unique_id %>">
+  	<div id="details_track_<%= id %>">
 
         <div class="description_panel panel no_border">
             <div class='alonetoner'>          
@@ -71,11 +70,11 @@
     </div>
 
 	    
-    <div id="share_track_<%= asset.unique_id %>">
+    <div id="share_track_<%= id %>">
         <%= render :partial => 'assets/share', :object => asset %>
     </div>
 
-    <div id="comment_track_<%= asset.unique_id %>">
+    <div id="comment_track_<%= id %>">
         <%= render :partial => 'assets/comment', :object => asset %>
     </div>
 	
